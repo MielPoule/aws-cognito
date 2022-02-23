@@ -48,7 +48,7 @@ class AwsCognitoAuthenticate extends BaseMiddleware
                 ($countRouteMiddleware>1)?($middleware = $routeMiddleware[1]):null;
             } //End if
 
-            //$this->authenticate($request);
+            $this->authenticate($request);
             return $next($request);
         } catch (Exception $e) {
             if ($e instanceof NoTokenException) {
